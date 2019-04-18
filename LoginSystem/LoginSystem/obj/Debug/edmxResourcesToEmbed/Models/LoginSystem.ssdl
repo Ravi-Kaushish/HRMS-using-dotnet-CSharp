@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoginsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuthenticateUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="30" />
+    <Property Name="Terms" Type="bit" />
+  </EntityType>
+  <EntityType Name="EducationDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="TenthBoard" Type="char" MaxLength="100" />
+    <Property Name="Tenthmarks" Type="float" />
+    <Property Name="Twelfthboard" Type="char" MaxLength="100" />
+    <Property Name="Twelfthmarks" Type="float" />
+    <Property Name="GraduationDegree" Type="char" MaxLength="100" />
+    <Property Name="GraduationMarks" Type="float" />
+  </EntityType>
+  <EntityType Name="EmployeeDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="firstname" Type="char" MaxLength="30" />
+    <Property Name="lastname" Type="char" MaxLength="30" />
+    <Property Name="fathername" Type="char" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" />
+    <Property Name="country" Type="char" MaxLength="50" />
+    <Property Name="dob" Type="date" />
+    <Property Name="gender" Type="char" MaxLength="15" />
+    <Property Name="designation" Type="char" MaxLength="40" />
+    <Property Name="address" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <Association Name="FK__Authenticate__Id__4E88ABD4">
+    <End Role="EmployeeDetail" Type="Self.EmployeeDetail" Multiplicity="1" />
+    <End Role="AuthenticateUser" Type="Self.AuthenticateUser" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthenticateUser">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EducationDet__Id__4BAC3F29">
+    <End Role="EmployeeDetail" Type="Self.EmployeeDetail" Multiplicity="1" />
+    <End Role="EducationDetail" Type="Self.EducationDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EducationDetail">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LoginsystemModelStoreContainer">
+    <EntitySet Name="AuthenticateUser" EntityType="Self.AuthenticateUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EducationDetail" EntityType="Self.EducationDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeDetail" EntityType="Self.EmployeeDetail" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Authenticate__Id__4E88ABD4" Association="Self.FK__Authenticate__Id__4E88ABD4">
+      <End Role="EmployeeDetail" EntitySet="EmployeeDetail" />
+      <End Role="AuthenticateUser" EntitySet="AuthenticateUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EducationDet__Id__4BAC3F29" Association="Self.FK__EducationDet__Id__4BAC3F29">
+      <End Role="EmployeeDetail" EntitySet="EmployeeDetail" />
+      <End Role="EducationDetail" EntitySet="EducationDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

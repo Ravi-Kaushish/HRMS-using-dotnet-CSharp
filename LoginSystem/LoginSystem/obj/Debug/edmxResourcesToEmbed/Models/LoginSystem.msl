@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoginsystemModelStoreContainer" CdmEntityContainer="LoginsystemEntities">
+    <EntitySetMapping Name="AuthenticateUsers">
+      <EntityTypeMapping TypeName="LoginsystemModel.AuthenticateUser">
+        <MappingFragment StoreEntitySet="AuthenticateUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EducationDetails">
+      <EntityTypeMapping TypeName="LoginsystemModel.EducationDetail">
+        <MappingFragment StoreEntitySet="EducationDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenthBoard" ColumnName="TenthBoard" />
+          <ScalarProperty Name="Tenthmarks" ColumnName="Tenthmarks" />
+          <ScalarProperty Name="Twelfthboard" ColumnName="Twelfthboard" />
+          <ScalarProperty Name="Twelfthmarks" ColumnName="Twelfthmarks" />
+          <ScalarProperty Name="GraduationDegree" ColumnName="GraduationDegree" />
+          <ScalarProperty Name="GraduationMarks" ColumnName="GraduationMarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeDetails">
+      <EntityTypeMapping TypeName="LoginsystemModel.EmployeeDetail">
+        <MappingFragment StoreEntitySet="EmployeeDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="fathername" ColumnName="fathername" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
